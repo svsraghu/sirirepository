@@ -1,0 +1,64 @@
+resilence4j:
+  circuitbreaker:
+    instances:
+    ragsAddProductFallBack :
+      registerHealthIndicator: true
+      automaticTransitionFromOpenToHalfOpenEnabled: true
+      failureRateThreshold: 50
+      minimumNumberOfCalls: 20
+      permittedNumberOfCallsInHalfOpenState: 3
+      slidingWindowSize: 100
+      waitDurationOpenState: 60s
+      slidingWindowType: COUNT_BASED
+
+      resilence4j:
+        circuitbreaker:
+          instances:
+          ragsProductsFallBack:
+            registerHealthIndicator: true
+            automaticTransitionFromOpenToHalfOpenEnabled: true
+            failureRateThreshold: 50
+            minimumNumberOfCalls: 20
+            permittedNumberOfCallsInHalfOpenState: 3
+            slidingWindowSize: 100
+            waitDurationOpenState: 60s
+            slidingWindowType: COUNT_BASED
+
+            resilence4j:
+              circuitbreaker:
+                instances:
+                ragsGetSingleProductsFallBack:
+                  registerHealthIndicator: true
+                  automaticTransitionFromOpenToHalfOpenEnabled: true
+                  failureRateThreshold: 50
+                  minimumNumberOfCalls: 20
+                  permittedNumberOfCallsInHalfOpenState: 3
+                  slidingWindowSize: 100
+                  waitDurationOpenState: 60s
+                  slidingWindowType: COUNT_BASED
+
+                  resilence4j:
+                    circuitbreaker:
+                      instances:
+                      ragsUpdateSingleProductsFallBack:
+                        registerHealthIndicator: true
+                        automaticTransitionFromOpenToHalfOpenEnabled: true
+                        failureRateThreshold: 50
+                        minimumNumberOfCalls: 20
+                        permittedNumberOfCallsInHalfOpenState: 3
+                        slidingWindowSize: 100
+                        waitDurationOpenState: 60s
+                        slidingWindowType: COUNT_BASED
+
+                        resilence4j:
+                          circuitbreaker:
+                            instances:
+                            ragsDeleteProductFallBack:
+                              registerHealthIndicator: true
+                              automaticTransitionFromOpenToHalfOpenEnabled: true
+                              failureRateThreshold: 50
+                              minimumNumberOfCalls: 20
+                              permittedNumberOfCallsInHalfOpenState: 3
+                              slidingWindowSize: 100
+                              waitDurationOpenState: 60s
+                              slidingWindowType: COUNT_BASED
